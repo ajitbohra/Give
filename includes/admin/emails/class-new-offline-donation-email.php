@@ -44,6 +44,7 @@ if ( ! class_exists( 'Give_New_Offline_Donation_Email' ) ) :
 				'description'                  => __( 'Sent to designated recipient(s) for a new (pending) offline donation.', 'give' ),
 				'has_recipient_field'          => true,
 				'notification_status'          => give_is_gateway_active( 'offline' ) ? 'enabled' : 'disabled',
+				'email_tag_context'            => array( 'donation', 'donor', 'form', 'general' ),
 				'notification_status_editable' => false,
 				'preview_email_tags_values'    => array(
 					'payment_method' => esc_html__( 'Offline', 'give' ),
@@ -51,7 +52,7 @@ if ( ! class_exists( 'Give_New_Offline_Donation_Email' ) ) :
 				'default_email_subject'        => $this->get_default_email_subject(),
 				'default_email_message'        => $this->get_default_email_message(),
 				'default_email_header'         => __( 'New Offline Donation!', 'give' ),
-				'notices' => array(
+				'notices'                      => array(
 					'non-notification-status-editable' => sprintf(
 						'%1$s <a href="%2$s">%3$s &raquo;</a>',
 						__( 'This notification is automatically toggled based on whether the gateway is enabled or not.', 'give' ),

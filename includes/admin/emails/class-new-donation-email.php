@@ -45,6 +45,7 @@ if ( ! class_exists( 'Give_New_Donation_Email' ) ) :
 				'description'           => __( 'Sent to designated recipient(s) when a new donation is received or a pending donation is marked as complete.', 'give' ),
 				'has_recipient_field'   => true,
 				'notification_status'   => 'enabled',
+				'email_tag_context'     => array( 'donation', 'donor', 'form', 'general' ),
 				'form_metabox_setting'  => true,
 				'default_email_subject' => esc_attr__( 'New Donation - #{payment_id}', 'give' ),
 				'default_email_message' => give_get_default_donation_notification_email(),
